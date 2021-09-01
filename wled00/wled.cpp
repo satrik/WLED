@@ -613,6 +613,8 @@ void WLED::initInterfaces()
   strip.service();
   // Set up mDNS responder:
   if (strlen(cmDNS) > 0) {
+    // "end" must be called before "begin" is called a 2nd time
+    // see https://github.com/esp8266/Arduino/issues/7213
     MDNS.end();
     MDNS.begin(cmDNS);
     DEBUG_PRINTLN(F("mDNS started"));

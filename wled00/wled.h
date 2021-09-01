@@ -85,6 +85,7 @@
 #include <WiFiUdp.h>
 #include <DNSServer.h>
 #ifndef WLED_DISABLE_OTA
+  #define NO_OTA_PORT
   #include <ArduinoOTA.h>
 #endif
 #include <SPIFFSEditor.h>
